@@ -7,6 +7,7 @@ import {
 
 // // Load the module
 import { ButtonMessageTemplate } from '../Template/ButtonMessageTemplate';
+import { ErrorMessageTemplate } from '../Template/ErrorMessageTemplate';
 
 export const SendMessage = (client: Client, event: WebhookEvent) => {
   if (event.type !== 'message' || event.message.type !== 'text') {
@@ -19,6 +20,6 @@ export const SendMessage = (client: Client, event: WebhookEvent) => {
   if (text === '今日の洋服は？') {
     client.replyMessage(replyToken, ButtonMessageTemplate());
   } else {
-    // ここで「そのメッセージには対応していません」と送る
+    client.replyMessage(replyToken, ErrorMessageTemplate());
   }
 };
