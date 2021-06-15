@@ -1,0 +1,20 @@
+{
+  "name": "Weather",
+  "version": "1.0.0",
+  "description": "![名称未設定.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/838372/0af0bfce-b695-b341-4e90-aeefde544562.png)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ssk9597/LINE-Node-TypeScript-Weather.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ssk9597/LINE-Node-TypeScript-Weather/issues"
+  },
+  "homepage": "https://github.com/ssk9597/LINE-Node-TypeScript-Weather#readme"
+}
