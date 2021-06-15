@@ -16,5 +16,12 @@
   "bugs": {
     "url": "https://github.com/ssk9597/LINE-Node-TypeScript-Weather/issues"
   },
-  "homepage": "https://github.com/ssk9597/LINE-Node-TypeScript-Weather#readme"
+  "homepage": "https://github.com/ssk9597/LINE-Node-TypeScript-Weather#readme",
+  "dependencies": {
+    "@line/bot-sdk": "^7.3.0",
+    "axios": "^0.21.1",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "nodemon": "^2.0.7"
+  }
 }
