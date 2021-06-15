@@ -2,9 +2,13 @@
   "name": "Weather",
   "version": "1.0.0",
   "description": "![名称未設定.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/838372/0af0bfce-b695-b341-4e90-aeefde544562.png)",
-  "main": "index.js",
+  "main": "api/dist/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "ts-node-dev --respawn api/src/index.ts",
+    "clean": "rimraf dist",
+    "tsc": "tsc",
+    "build": "npm-run-all clean tsc",
+    "start": "node ."
   },
   "repository": {
     "type": "git",
