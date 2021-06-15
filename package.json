@@ -1,0 +1,40 @@
+{
+  "name": "Weather",
+  "version": "1.0.0",
+  "description": "![名称未設定.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/838372/0af0bfce-b695-b341-4e90-aeefde544562.png)",
+  "main": "api/dist/index.js",
+  "scripts": {
+    "dev": "ts-node-dev --respawn api/src/index.ts",
+    "clean": "rimraf dist",
+    "tsc": "tsc",
+    "build": "npm-run-all clean tsc",
+    "start": "node ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ssk9597/LINE-Node-TypeScript-Weather.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ssk9597/LINE-Node-TypeScript-Weather/issues"
+  },
+  "homepage": "https://github.com/ssk9597/LINE-Node-TypeScript-Weather#readme",
+  "dependencies": {
+    "@line/bot-sdk": "^7.3.0",
+    "axios": "^0.21.1",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "nodemon": "^2.0.7"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.12",
+    "@types/node": "^15.12.2",
+    "npm-run-all": "^4.1.5",
+    "rimraf": "^3.0.2",
+    "ts-node": "^10.0.0",
+    "ts-node-dev": "^1.1.6",
+    "typescript": "^4.3.2"
+  }
+}
