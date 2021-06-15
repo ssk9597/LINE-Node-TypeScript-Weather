@@ -15,6 +15,7 @@ dotenv.config();
 
 // Load the module
 import { SendMessage } from './Common/Send/ButtonOrErrorMessage';
+import { FlexMessage } from './Common/Send/FlexMessage';
 
 // Read the ports from the process.env file
 const PORT = process.env.PORT || 3000;
@@ -48,7 +49,9 @@ app.post(
 
     events.map(async (event: WebhookEvent) => {
       try {
+        console.log(event);
         await SendMessage(client, event);
+        await FlexMessage(client, event);
       } catch (err) {
         console.error(err);
       }
