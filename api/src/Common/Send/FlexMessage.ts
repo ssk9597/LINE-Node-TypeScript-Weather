@@ -14,7 +14,7 @@ export const FlexMessage = async (client: Client, event: WebhookEvent): Promise<
     }
 
     const { replyToken } = event;
-    const message: any = await FlexMessageTemplate(event);
+    const message = await FlexMessageTemplate(event);
 
     client.replyMessage(replyToken, message);
   } catch (err) {

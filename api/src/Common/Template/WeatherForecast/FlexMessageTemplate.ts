@@ -2,6 +2,7 @@
 import {
   // Webhook
   WebhookEvent,
+  FlexMessage,
 } from '@line/bot-sdk';
 
 import { formatWeatherForecastData } from './FormatWeatherForecast';
@@ -9,7 +10,7 @@ import { formatWeatherForecastData } from './FormatWeatherForecast';
 // types
 import { WeatherArrayType } from './types/weatherArray.type';
 
-export const FlexMessageTemplate = async (event: WebhookEvent) => {
+export const FlexMessageTemplate = async (event: WebhookEvent): Promise<FlexMessage> => {
   const data: WeatherArrayType = await formatWeatherForecastData(event);
 
   return {
