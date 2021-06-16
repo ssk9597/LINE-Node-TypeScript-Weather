@@ -1,6 +1,6 @@
 // Load the package
 import { WebhookEvent } from '@line/bot-sdk';
-import axios from 'axios';
+import axios, { AxiosResponse } from 'axios';
 
 export const getWeatherForecastData = async (event: WebhookEvent): Promise<any> => {
   try {
@@ -18,7 +18,7 @@ export const getWeatherForecastData = async (event: WebhookEvent): Promise<any> 
     // OpenWeatherURL
     const openWeatherURL: string = `https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&units=metric&lang=ja&appid=${openWeatherAPI}`;
 
-    const weatherData: any = await axios.get(openWeatherURL);
+    const weatherData: AxiosResponse<any> = await axios.get(openWeatherURL);
     return weatherData;
   } catch (err) {
     console.log(err);
