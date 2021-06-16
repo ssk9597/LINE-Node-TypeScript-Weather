@@ -49,7 +49,6 @@ app.post(
 
     events.map(async (event: WebhookEvent) => {
       try {
-        console.log(event);
         await SendMessage(client, event);
         await FlexMessage(client, event);
       } catch (err) {
