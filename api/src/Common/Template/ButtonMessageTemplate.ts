@@ -1,3 +1,4 @@
+// Load the package
 import { TemplateMessage } from '@line/bot-sdk';
 
 export const ButtonMessageTemplate = (): TemplateMessage => {

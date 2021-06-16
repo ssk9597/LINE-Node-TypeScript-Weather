@@ -1,10 +1,7 @@
-import {
-  // main APIs
-  Client,
-  // Webhook
-  WebhookEvent,
-} from '@line/bot-sdk';
+// Load the package
+import { Client, WebhookEvent } from '@line/bot-sdk';
 
+// Load the module
 import { FlexMessageTemplate } from '../Template/WeatherForecast/FlexMessageTemplate';
 
 export const FlexMessage = async (client: Client, event: WebhookEvent): Promise<void> => {
@@ -16,7 +13,7 @@ export const FlexMessage = async (client: Client, event: WebhookEvent): Promise<
     const { replyToken } = event;
     const message = await FlexMessageTemplate(event);
 
-    client.replyMessage(replyToken, message);
+    await client.replyMessage(replyToken, message);
   } catch (err) {
     console.log(err);
   }

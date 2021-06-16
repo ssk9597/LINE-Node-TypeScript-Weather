@@ -1,14 +1,5 @@
 // Load the package
-import {
-  // main APIs
-  Client,
-  middleware,
-  // config
-  ClientConfig,
-  MiddlewareConfig,
-  // Webhook
-  WebhookEvent,
-} from '@line/bot-sdk';
+import { Client, middleware, ClientConfig, MiddlewareConfig, WebhookEvent } from '@line/bot-sdk';
 import express from 'express';
 import dotenv from 'dotenv';
 dotenv.config();
@@ -47,14 +38,16 @@ app.post(
   async (req: express.Request, res: express.Response): Promise<void> => {
     const events: WebhookEvent[] = req.body.events;
 
-    events.map(async (event: WebhookEvent) => {
-      try {
-        await SendMessage(client, event);
-        await FlexMessage(client, event);
-      } catch (err) {
-        console.error(err);
+    events.map(
+      async (event: WebhookEvent): Promise<void> => {
+        try {
+          await SendMessage(client, event);
+          await FlexMessage(client, event);
+        } catch (err) {
+          console.error(err);
+        }
       }
-    });
+    );
   }
 );
 

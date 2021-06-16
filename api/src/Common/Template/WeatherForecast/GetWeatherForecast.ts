@@ -1,12 +1,8 @@
 // Load the package
-import {
-  // Webhook
-  WebhookEvent,
-} from '@line/bot-sdk';
-
+import { WebhookEvent } from '@line/bot-sdk';
 import axios from 'axios';
 
-export const getWeatherForecastData = async (event: WebhookEvent) => {
+export const getWeatherForecastData = async (event: WebhookEvent): Promise<any> => {
   try {
     if (event.type !== 'message' || event.message.type !== 'location') {
       return;

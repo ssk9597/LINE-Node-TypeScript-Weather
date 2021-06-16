@@ -1,3 +1,4 @@
+// Load the package
 import { TextMessage } from '@line/bot-sdk';
 
 export const ErrorMessageTemplate = (): TextMessage => {

@@ -1,15 +1,13 @@
 // Load the package
-import {
-  // Webhook
-  WebhookEvent,
-} from '@line/bot-sdk';
+import { WebhookEvent } from '@line/bot-sdk';
 
+// Load the module
 import { getWeatherForecastData } from './GetWeatherForecast';
 
 // types
 import { WeatherArrayType } from './types/weatherArray.type';
 
-export const formatWeatherForecastData = async (event: WebhookEvent) => {
+export const formatWeatherForecastData = async (event: WebhookEvent): Promise<WeatherArrayType> => {
   // Get the getWeatherForecastData
   const weathers: any = await getWeatherForecastData(event);
 
