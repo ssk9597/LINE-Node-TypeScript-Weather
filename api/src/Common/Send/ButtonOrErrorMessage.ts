@@ -9,7 +9,7 @@ import {
 import { ButtonMessageTemplate } from '../Template/ButtonMessageTemplate';
 import { ErrorMessageTemplate } from '../Template/ErrorMessageTemplate';
 
-export const SendMessage = (client: Client, event: WebhookEvent) => {
+export const SendMessage = (client: Client, event: WebhookEvent): void => {
   try {
     if (event.type !== 'message' || event.message.type !== 'text') {
       return;

@@ -18,7 +18,7 @@ import { SendMessage } from './Common/Send/ButtonOrErrorMessage';
 import { FlexMessage } from './Common/Send/FlexMessage';
 
 // Read the ports from the process.env file
-const PORT = process.env.PORT || 3000;
+const PORT: string | 3000 = process.env.PORT || 3000;
 
 // Load the access token and channel secret from the .env file
 const clientConfig: ClientConfig = {

@@ -6,31 +6,33 @@ import {
 
 import { getWeatherForecastData } from './GetWeatherForecast';
 
+// types
+import { WeatherArrayType } from './types/weatherArray.type';
+
 export const formatWeatherForecastData = async (event: WebhookEvent) => {
   // Get the getWeatherForecastData
-  const weathers = await getWeatherForecastData(event);
-  console.log(weathers);
+  const weathers: any = await getWeatherForecastData(event);
 
   // Util
-  const weather = weathers.data.daily[0];
+  const weather: any = weathers.data.daily[0];
 
   // Five required data
   // 1) Today's date
-  let today = weather.dt;
-  today = new Date(today * 1000);
-  today = today.toLocaleDateString('ja-JP');
+  const UNIXToday: number = weather.dt;
+  const convertUNIXToday: Date = new Date(UNIXToday * 1000);
+  const today: string = convertUNIXToday.toLocaleDateString('ja-JP');
 
   // 2) Weather forecast
-  const weatherForecast = weather.weather[0].description;
+  const weatherForecast: string = weather.weather[0].description;
 
   // 3) Temperature (morning, daytime, evening, night)
-  const mornTemperature = weather.feels_like.morn;
-  const dayTemperature = weather.feels_like.day;
-  const eveTemperature = weather.feels_like.eve;
-  const nightTemperature = weather.feels_like.night;
+  const mornTemperature: number = weather.feels_like.morn;
+  const dayTemperature: number = weather.feels_like.day;
+  const eveTemperature: number = weather.feels_like.eve;
+  const nightTemperature: number = weather.feels_like.night;
 
   // Bifurcate your clothing by maximum temperature
-  const maximumTemperature = Math.max(
+  const maximumTemperature: number = Math.max(
     mornTemperature,
     dayTemperature,
     eveTemperature,
@@ -38,10 +40,10 @@ export const formatWeatherForecastData = async (event: WebhookEvent) => {
   );
 
   // 4) Fashion Advice
-  let fashionAdvice = '';
+  let fashionAdvice: string = '';
 
   // 5) Fashion Image
-  let imageURL = '';
+  let imageURL: string = '';
 
   if (maximumTemperature >= 26) {
     fashionAdvice =
@@ -76,7 +78,7 @@ export const formatWeatherForecastData = async (event: WebhookEvent) => {
   }
 
   // Make an array of the above required items.
-  const weatherArray = {
+  const weatherArray: WeatherArrayType = {
     today,
     imageURL,
     weatherForecast,

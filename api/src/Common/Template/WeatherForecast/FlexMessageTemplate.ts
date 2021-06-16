@@ -6,8 +6,11 @@ import {
 
 import { formatWeatherForecastData } from './FormatWeatherForecast';
 
+// types
+import { WeatherArrayType } from './types/weatherArray.type';
+
 export const FlexMessageTemplate = async (event: WebhookEvent) => {
-  const data = await formatWeatherForecastData(event);
+  const data: WeatherArrayType = await formatWeatherForecastData(event);
 
   return {
     type: 'flex',

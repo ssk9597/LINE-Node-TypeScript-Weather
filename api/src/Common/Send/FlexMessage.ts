@@ -7,7 +7,7 @@ import {
 
 import { FlexMessageTemplate } from '../Template/WeatherForecast/FlexMessageTemplate';
 
-export const FlexMessage = async (client: Client, event: WebhookEvent) => {
+export const FlexMessage = async (client: Client, event: WebhookEvent): Promise<void> => {
   try {
     if (event.type !== 'message' || event.message.type !== 'location') {
       return;
@@ -15,7 +15,6 @@ export const FlexMessage = async (client: Client, event: WebhookEvent) => {
 
     const { replyToken } = event;
     const message: any = await FlexMessageTemplate(event);
-    console.log(message);
 
     client.replyMessage(replyToken, message);
   } catch (err) {
