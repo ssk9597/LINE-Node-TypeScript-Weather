@@ -46,7 +46,7 @@ nodemon
 
 [Glitch](https://glitch.com/)を使いました。
 
-https://line-weather-fashion.glitch.me/
+https://line-weateher-fashion-app.glitch.me/
 
 ## 友達追加はこちらからどうぞ
 
