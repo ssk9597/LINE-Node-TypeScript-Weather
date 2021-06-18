@@ -1,18 +1,20 @@
 // Load the package
 import { WebhookEvent } from '@line/bot-sdk';
+import { AxiosResponse } from 'axios';
 
 // Load the module
 import { getWeatherForecastData } from './GetWeatherForecast';
 
 // types
+import { WeatherType } from './types/weather.type';
 import { WeatherArrayType } from './types/weatherArray.type';
 
 export const formatWeatherForecastData = async (event: WebhookEvent): Promise<WeatherArrayType> => {
   // Get the getWeatherForecastData
-  const weathers: any = await getWeatherForecastData(event);
+  const weathers: AxiosResponse<any> = await getWeatherForecastData(event);
 
   // Util
-  const weather: any = weathers.data.daily[0];
+  const weather: WeatherType = weathers.data.daily[0];
 
   // Five required data
   // 1) Today's date
