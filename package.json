@@ -1,5 +1,5 @@
 {
-  "name": "Weather",
+  "name": "weather",
   "version": "1.0.0",
   "description": "![名称未設定.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/838372/0af0bfce-b695-b341-4e90-aeefde544562.png)",
   "main": "api/dist/index.js",
